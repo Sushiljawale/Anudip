@@ -1,0 +1,83 @@
+<mat-sidenav-container class="sidenav-container"
+  style="background-image: url(/assets/bgimage.jpg ); background-repeat: no-repeat; background-size: cover;">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="(isHandset$ | async) === false">
+    <mat-toolbar style="background-color: rgb(43, 41, 165);">Menu</mat-toolbar>
+    <mat-nav-list>
+      <nav>
+        
+          <mat-grid-tile-header> <br><br>
+            <button mat-button [matMenuTriggerFor]="belowMenu" 
+              color="primary">Information</button>
+            <mat-menu #belowMenu="matMenu" yPosition="below">
+              <li class="nav-items"> <a class="nav-link active" 
+                 routerLink="/address">Information</a></li>
+            </mat-menu><br><br>
+
+            <button mat-button [matMenuTriggerFor]="beforeMenu" 
+             color="primary">Dashboard</button>
+            <mat-menu #beforeMenu="matMenu" xPosition="before">
+              <li class="nav-items"> <a class="nav-link active" 
+                 routerLink="/dashboard">Dashboard</a></li>
+            </mat-menu><br><br>
+
+
+            <button mat-button [matMenuTriggerFor]="afterMenu" 
+             color="primary">Routing</button>
+            <mat-menu #afterMenu="matMenu" xPosition="after">
+              <li class="nav-items"> <a class="nav-link active" 
+                 routerLink="/cdk">Routine</a></li><br><br>
+
+            </mat-menu>
+          </mat-grid-tile-header>
+      </nav>
+ </mat-nav-list>
+ <img src="/assets/logo.jpg" alt="image" width="100px" height="100px">
+ </mat-sidenav>
+
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">
+          <h1>Menu</h1>
+        </mat-icon>
+      </button>
+      <span>
+        <h1> Go Digital Technology Consulting LLP</h1>
+      </span>
+    </mat-toolbar>
+
+    <p>
+      Go Digital Technology Consulting LLP
+      We are a traditional IT services business company with a focus on Data Analytics, and work on Digital
+      Transformation projects from Fortune 500 companies. We are helping out clients to build cutting edge Data
+      Analytics products on the cloud to transform their business.
+    </p>
+
+
+
+    <!-- 
+  <div>Uppercase Pipe : {{test | uppercase}}
+     Lowercase Pipe : {{test | lowercase}} <br>
+     Date Pipe : {{day | date:'fullDate'}} <br>
+    Currency Pipe : {{rupee | currency}} <br>
+    JSON Pipe : {{obj | json}} <br>
+    Percentage Pipe : {{per | percent }} <br>
+    Decimal Pipe : {{num | number:'2.1-8'}} <br>
+<p>Slice Pipe : <li *ngFor="let a of arr | slice:1:3">{{a}}</li></p>
+</div> -->
+
+    <!-- 
+<button mat-button>
+  <mat-icon>face</mat-icon>
+  click me! </button>
+  <mat-checkbox >Check me!</mat-checkbox> -->
+
+    <!-- 
+
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+  <img src="/assets/holi.jpg" alt="image"  width="800" height="800"> 
+
+
+   -->

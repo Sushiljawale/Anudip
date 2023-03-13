@@ -1,0 +1,15 @@
+<form>
+  <div>
+    <h1 class="mat-h1">Todays Deal</h1>
+    <mat-grid-list cols="2" rowHeight="350px">
+      <mat-card *ngFor="let card of cards | async">
+        <!-- <img src="/assets/logo.jpg" alt="image" width="100px" height="100px"> -->
+        <mat-card-title>{{ card.title }}</mat-card-title>
+        <mat-card-content>
+          <!-- Card content goes here -->
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-list>
+  </div>
+</form>
+

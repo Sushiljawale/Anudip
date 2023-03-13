@@ -1,21 +1,56 @@
-<div class="container">
-  <div class="row">
-    <div class="col-md-12">
-      <div class="card bg-dark my-5">
-        <div class="card-body">
-          <h2 class="card-title text-center text-white py-3">{{ title }}</h2>
-          <ul class="text-center list-inline py-3">
-            <li class="list-inline-item">
-              <a routerLink="/users" class="btn btn-info">List Users</a>
-                </li>
-            <li class="list-inline-item">
-              <a routerLink="/adduser" class="btn btn-info">Add User</a>
-                </li>
-          </ul>
-        </div>
-      </div>
-      <router-outlet></router-outlet>
-    </div>
-  </div>
-</div>
+<form >
+   <mat-toolbar >
+   <mat-grid-tile-header color="primary">
+      <button mat-button [matMenuTriggerFor]="aboveMenu" color="primary">Menu</button>
+      <mat-menu #aboveMenu="matMenu" yPosition="above">
+         <li class="nav-items"> <a class="nav-link active" routerLink="/">Menu</a></li>
+      </mat-menu>
 
+      <button mat-button [matMenuTriggerFor]="belowMenu" 
+       color="primary">Information</button>
+      <mat-menu #belowMenu="matMenu" yPosition="below">
+         <li class="nav-items"> <a class="nav-link active" 
+             routerLink="/address">Information</a></li>
+      </mat-menu>
+
+      <button mat-button [matMenuTriggerFor]="beforeMenu" 
+       color="primary">Dashboard</button>
+      <mat-menu #beforeMenu="matMenu" xPosition="before">
+         <li class="nav-items"> <a class="nav-link active" 
+             routerLink="/dashboard">Dashboard</a></li>
+      </mat-menu>
+
+
+      <button mat-button [matMenuTriggerFor]="afterMenu" color="primary">Routing</button>
+      <mat-menu #afterMenu="matMenu" xPosition="after">
+         <li class="nav-items"> <a class="nav-link active" routerLink="/cdk">Routine</a></li>
+
+
+      </mat-menu>
+   </mat-grid-tile-header>
+</mat-toolbar> 
+</form>
+<router-outlet></router-outlet>
+
+
+
+<!-- <header>
+     <nav> 
+        <ul class="nav nav-tabs">
+
+            <li class="nav-items">  <a class ="nav-link active" 
+                routerLink="/">Menu</a></li>
+
+                
+         <li class="nav-items">  <a class ="nav-link active" 
+            routerLink="/address">Information</a></li>
+
+         <li class="nav-items">  <a class ="nav-link active" 
+                     routerLink="/dashboard">Dashboard</a></li>
+
+         <li class="nav-items">  <a class ="nav-link active" 
+                        routerLink="/cdk">Routine</a></li>
+
+        </ul>
+     </nav>
+ </header> -->
